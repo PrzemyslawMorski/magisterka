@@ -2,4 +2,4 @@ cluster.name: io_test
 node.name: io_test
 discovery.type: single-node
 network.host: 127.0.0.1
-network.port: 9200
+http.port: 9200
