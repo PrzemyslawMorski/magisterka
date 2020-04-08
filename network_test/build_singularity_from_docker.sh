@@ -1,1 +1,0 @@
-singularity build network_test.sif docker://pmorski/network_test_hello

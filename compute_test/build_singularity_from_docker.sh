@@ -1,1 +1,0 @@
-singularity build compute_test.sif docker://pmorski/compute_test_fibonacci

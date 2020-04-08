@@ -1,1 +1,0 @@
-singularity build io_test.sif docker://pmorski/io_test_bold_db
