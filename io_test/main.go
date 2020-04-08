@@ -49,7 +49,7 @@ func setupServer() {
 	storeInitData(db)
 
 	http.HandleFunc("/", getDbContentHandler)
-	http.ListenAndServe(":8080", nil)
+	http.ListenAndServe(":80", nil)
 }
 
 func getDbContentHandler(w http.ResponseWriter, r *http.Request) {
