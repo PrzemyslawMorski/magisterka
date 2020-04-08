@@ -1,6 +1,5 @@
-singularity build io_test.sif docker://docker.elastic.co/elasticsearch/elasticsearch:7.4.2
-
-singularity run --network-args "portmap=9202:9200/tcp" io_test.sif &
+singularity build --fix-perms --sandbox io_test_sandbox/ docker://pmorski/io_test_elasticsearch
+singularity run --writable io_test_sandbox &
 
 sleep 30s
 

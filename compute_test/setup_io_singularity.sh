@@ -1,2 +1,2 @@
-singularity build compute_test.sif docker://pmorski/compute_test_fibonacci
-singularity run --network-args "portmap=8002:8080/tcp" compute_test.sif &
+singularity build --sandbox --fix-perms compute_test_sandbox/ docker://pmorski/compute_test_fibonacci
+singularity run --writeable compute_test_sandbox &

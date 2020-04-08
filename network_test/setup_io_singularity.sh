@@ -1,3 +1,2 @@
-singularity build network_test.sif docker://nginx
-
-singularity run --network-args "portmap=8502:80/tcp" network_test.sif &
+singularity build --sandbox --fix-perms network_test_sandbox/ docker://nginx
+sudo singularity run --writable network_test_sandbox &
