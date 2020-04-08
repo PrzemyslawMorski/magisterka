@@ -1,6 +1,7 @@
 sudo echo "vm.max_map_count=262144" >> /etc/sysctl.conf
 
 singularity build --fix-perms --sandbox io_test_sandbox/ docker://docker.elastic.co/elasticsearch/elasticsearch:7.4.2
+cp ./elasticsearch.yml ./io_test_sandboxusr/share/elasticsearch/config/elasicsearch.yml
 singularity run --writable io_test_sandbox &
 
 sleep 30s
