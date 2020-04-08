@@ -1,0 +1,1 @@
+docker run -p 8001:8080 --name compute_test -d pmorski/compute_test_fibonacci

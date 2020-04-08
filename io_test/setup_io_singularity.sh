@@ -1,6 +1,6 @@
 singularity build io_test.sif docker://docker.elastic.co/elasticsearch/elasticsearch:7.4.2
 
-singularity run --network-args "portmap=9202:9200/tcp" io_test.sif
+singularity run --network-args "portmap=9202:9200/tcp" io_test.sif &
 
 sleep 10s
 

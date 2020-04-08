@@ -1,0 +1,1 @@
+docker run -p 8501:80 --name network_test --rm -d nginx
