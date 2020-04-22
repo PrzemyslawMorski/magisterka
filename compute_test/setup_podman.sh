@@ -1,0 +1,1 @@
+podman run -p 8082:8080 --name compute_test -d pmorski/compute_test_fibonacci
