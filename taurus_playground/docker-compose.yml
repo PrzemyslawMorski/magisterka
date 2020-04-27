@@ -1,0 +1,12 @@
+version: '3.7'
+
+services:
+  tester:
+    image: blazemeter/taurus
+    environment:
+      - JAVA_OPTS="-Xms2g -Xmx2g"
+    volumes:
+      - ./test_configs:/bzt-configs
+      - ./test_volume:/tmp/artifacts
+    entrypoint: ['bzt', 'my-config.yml']
+    network_mode: host
