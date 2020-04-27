@@ -14,9 +14,9 @@
       <com.blazemeter.jmeter.threads.concurrency.ConcurrencyThreadGroup guiclass="com.blazemeter.jmeter.threads.concurrency.ConcurrencyThreadGroupGui" testclass="com.blazemeter.jmeter.threads.concurrency.ConcurrencyThreadGroup" testname="bzm - Concurrency Thread Group" enabled="true">
         <elementProp name="ThreadGroup.main_controller" elementType="com.blazemeter.jmeter.control.VirtualUserController"/>
         <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
-        <stringProp name="TargetLevel">30000</stringProp>
+        <stringProp name="TargetLevel">3000</stringProp>
         <stringProp name="RampUp">6</stringProp>
-        <stringProp name="Steps">60</stringProp>
+        <stringProp name="Steps">120</stringProp>
         <stringProp name="Hold">0</stringProp>
         <stringProp name="LogFilename"></stringProp>
         <stringProp name="Iterations"></stringProp>
@@ -27,7 +27,7 @@
           <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
             <collectionProp name="Arguments.arguments"/>
           </elementProp>
-          <stringProp name="HTTPSampler.domain">192.168.0.168</stringProp>
+          <stringProp name="HTTPSampler.domain">192.168.48.11</stringProp>
           <stringProp name="HTTPSampler.port">9080</stringProp>
           <stringProp name="HTTPSampler.protocol"></stringProp>
           <stringProp name="HTTPSampler.contentEncoding"></stringProp>
@@ -76,7 +76,7 @@
               <connectTime>true</connectTime>
             </value>
           </objProp>
-          <stringProp name="filename">C:\GIT\magisterka\network_test\wyniki\summary.csv</stringProp>
+          <stringProp name="filename">C:\Users\pmorski\Desktop\Testy jmeter\summary.csv</stringProp>
         </ResultCollector>
         <hashTree/>
         <ResultCollector guiclass="StatVisualizer" testclass="ResultCollector" testname="Aggregate Report" enabled="true">
@@ -113,7 +113,7 @@
               <connectTime>true</connectTime>
             </value>
           </objProp>
-          <stringProp name="filename">C:\GIT\magisterka\network_test\wyniki\aggregate.csv</stringProp>
+          <stringProp name="filename">C:\Users\pmorski\Desktop\Testy jmeter\aggregate.csv</stringProp>
         </ResultCollector>
         <hashTree/>
         <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="View Results Tree" enabled="true">
@@ -150,7 +150,7 @@
               <connectTime>true</connectTime>
             </value>
           </objProp>
-          <stringProp name="filename">C:\GIT\magisterka\network_test\wyniki\tree.csv</stringProp>
+          <stringProp name="filename">C:\Users\pmorski\Desktop\Testy jmeter\tree.csv</stringProp>
         </ResultCollector>
         <hashTree/>
       </hashTree>
