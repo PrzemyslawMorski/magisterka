@@ -1,6 +1,6 @@
 glances --export csv --export-csv-file usage_podman.csv -q &
 
-podman run -d --rm -e discovery.type=single-node -v $(pwd)/elasticsearch.yml:/usr/share/elasticsearch/config/elasicsearch.yml -p 9200:9200 docker.elastic.co/elasticsearch/elasticsearch:7.4.2
+podman run -d --rm -e discovery.type=single-node -e "ES_JAVA_OPTS=-Xms6g -Xmx6g" -v $(pwd)/elasticsearch.yml:/usr/share/elasticsearch/config/elasicsearch.yml -p 9200:9200 docker.elastic.co/elasticsearch/elasticsearch:7.4.2
 
 sleep 30s
 
