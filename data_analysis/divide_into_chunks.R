@@ -1,6 +1,6 @@
 #!/usr/bin/env Rscript
-library("optparse")
-library("readr")
+if(!require(optparse)){install.packages("optparse")}
+if(!require(readr)){install.packages("readr")}
  
 option_list = list(
   make_option(c("-f", "--file"), type="character", default=NULL, 
@@ -14,19 +14,14 @@ option_list = list(
 opt_parser = OptionParser(option_list=option_list);
 opt = parse_args(opt_parser);
 
-print(opt$file)
-print(opt$out)
-print(opt$selector)
 
 function_field_selector <- function(arg1) {
-  arg1.loc(opt$selector)
+  arg1[[opt$selector]]
 }
 
+file_to_divide <- readr::read_csv(opt$file)
 
-file <- file.choose()
-file_to_divide <- readr::read_csv(file)
-
-results <- data.frame(matrix(ncol = 10, nrow = 0))
+results <- data.frame(matrix(ncol = 13, nrow = 0))
 
 for (chunk in 1:120) {
   num_users <- chunk * 25
@@ -35,6 +30,7 @@ for (chunk in 1:120) {
   
   selector <- function_field_selector(chunk_subset)
   
+  num_requests = nrow(chunk_subset)
   max_val = max(selector)
   min_val = min(selector)
   avg_val = mean(selector)
@@ -42,8 +38,16 @@ for (chunk in 1:120) {
   percentiles = quantile(selector, c(.60, .80, .90, .98))
   std_dev_val = sd(selector)
   
+  chunk_duration_in_seconds = 6 # JMeter scenario was bumping users by 25 every 6 seconds
+  throughput_val = num_requests / chunk_duration_in_seconds
+  bandwidth_in_bytes = sum(chunk_subset$bytes)
+  
   df <- data.frame(
     chunk, 
+    num_users,
+    # num_requests,
+    throughput_val,
+    bandwidth_in_bytes,
     max_val, 
     min_val, 
     avg_val, 
@@ -56,6 +60,10 @@ for (chunk in 1:120) {
   
   colnames(df) <- c(
     "chunk", 
+    "num_users",
+    # "num_requests",
+    "throughput",
+    "bandwidth_in_bytes",
     "max", 
     "min", 
     "avg", 
@@ -71,7 +79,7 @@ for (chunk in 1:120) {
 }
 
 
-readr::write_csv(results, output_file_name, append=TRUE, col_names = TRUE)
+readr::write_csv(results, opt$out, append=TRUE, col_names = TRUE)
 
 
 

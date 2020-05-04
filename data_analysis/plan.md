@@ -2,6 +2,7 @@ Artefakty do utworzenia:
 
 - wykresy od JMeter
     - wykres czasu odpowiedzi
+    - wykres latency
     - wykres error rate'u
     - wykres throughputu
     - wykres bandwidth
