@@ -1,0 +1,32 @@
+#!/usr/bin/env Rscript
+if (!require(optparse)) { install.packages("optparse") }
+if (!require(readr)) { install.packages("readr") }
+
+opt = parse_args(OptionParser(option_list = list(
+  make_option(c("-d", "--dir"), type = "character", default = NULL,
+              help = "input files dir", metavar = "character"),
+  make_option(c("-s", "--selector"), type = "character", default = NULL,
+              help = "selected column", metavar = "character"),
+  make_option(c("-o", "--out"), type = "character", default = "out.txt",
+              help = "output file name [default= %default]", metavar = "character")
+)));
+
+files_from_dir = list.files(path = opt$dir, pattern = "*_output.csv", all.files = FALSE,
+           full.names = FALSE, recursive = FALSE,
+           ignore.case = FALSE, include.dirs = FALSE, no.. = FALSE)
+
+result = data.frame(1:120)
+colnames(result) <- c("chunk")
+
+for (file_name in files_from_dir) {
+  content = readr::read_csv(file_name)
+
+  selected_column = content[[opt$selector]]
+
+  result[[file_name]] <- selected_column
+}
+
+readr::write_csv(result, opt$out, append=TRUE, col_names = TRUE)
+
+
+
