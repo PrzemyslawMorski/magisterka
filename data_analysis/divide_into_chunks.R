@@ -14,21 +14,16 @@ option_list = list(
 opt_parser = OptionParser(option_list=option_list);
 opt = parse_args(opt_parser);
 
-
-function_field_selector <- function(arg1) {
-  arg1[[opt$selector]]
-}
-
 file_to_divide <- readr::read_csv(opt$file)
 
-results <- data.frame(matrix(ncol = 13, nrow = 0))
+results <- data.frame(matrix(ncol = 14, nrow = 0))
 
 for (chunk in 1:120) {
   num_users <- chunk * 25
   
   chunk_subset <- subset(file_to_divide, grpThreads == num_users)
   
-  selector <- function_field_selector(chunk_subset)
+  selector <- chunk_subset[[opt$selector]]
   
   num_requests = nrow(chunk_subset)
   max_val = max(selector)
@@ -45,7 +40,7 @@ for (chunk in 1:120) {
   df <- data.frame(
     chunk, 
     num_users,
-    # num_requests,
+    num_requests,
     throughput_val,
     bandwidth_in_bytes,
     max_val, 
@@ -61,7 +56,7 @@ for (chunk in 1:120) {
   colnames(df) <- c(
     "chunk", 
     "num_users",
-    # "num_requests",
+    "num_requests",
     "throughput",
     "bandwidth_in_bytes",
     "max", 
