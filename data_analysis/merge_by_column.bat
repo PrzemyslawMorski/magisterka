@@ -1,5 +1,14 @@
-set merge_dir="."
-set merge_column="median"
-set output_file="median_merged.csv"
+set merge_dir="D:\Google Drive\Magister\Wyniki badan\merged\network\latency"
 
-Rscript .\merge_files_by_column.R -d %merge_dir% -s %merge_column% -o %output_file%
+Rscript .\merge_files_by_column.R -d %merge_dir% -s "num_requests" -o "merged\num_requests_merged.csv"
+Rscript .\merge_files_by_column.R -d %merge_dir% -s "throughput" -o "merged\throughput_merged.csv"
+Rscript .\merge_files_by_column.R -d %merge_dir% -s "bandwidth_in_bytes" -o "merged\bandwidth_in_bytes_merged.csv"
+Rscript .\merge_files_by_column.R -d %merge_dir% -s "max" -o "merged\max_merged.csv"
+Rscript .\merge_files_by_column.R -d %merge_dir% -s "min" -o "merged\min_merged.csv"
+Rscript .\merge_files_by_column.R -d %merge_dir% -s "avg" -o "merged\avg_merged.csv"
+Rscript .\merge_files_by_column.R -d %merge_dir% -s "median" -o "merged\median_merged.csv"
+Rscript .\merge_files_by_column.R -d %merge_dir% -s "std_dev" -o "merged\std_dev_merged.csv"
+Rscript .\merge_files_by_column.R -d %merge_dir% -s "60th percentile" -o "merged\60th percentile_merged.csv"
+Rscript .\merge_files_by_column.R -d %merge_dir% -s "80th percentile" -o "merged\80th percentile_merged.csv"
+Rscript .\merge_files_by_column.R -d %merge_dir% -s "90th percentile" -o "merged\90th percentile_merged.csv"
+Rscript .\merge_files_by_column.R -d %merge_dir% -s "98th percentile" -o "merged\98th percentile_merged.csv"

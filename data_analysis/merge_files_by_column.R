@@ -34,14 +34,14 @@ result = data.frame(1:120)
 colnames(result) <- c("chunk")
 
 for (file_name in files_from_dir) {
-  content = readr::read_csv(file_name)
+  content = readr::read_csv(file.path(opt$dir, file_name))
 
   selected_column = content[[opt$selector]]
 
   result[[file_name]] <- selected_column
 }
 
-readr::write_csv(result, opt$out, append = TRUE, col_names = TRUE)
+readr::write_csv(result, file.path(opt$dir, opt$out), append = TRUE, col_names = TRUE)
 
 
 
