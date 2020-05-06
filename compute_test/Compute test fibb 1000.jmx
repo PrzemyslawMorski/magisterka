@@ -35,7 +35,7 @@
               </elementProp>
             </collectionProp>
           </elementProp>
-          <stringProp name="HTTPSampler.domain">192.168.48.11</stringProp>
+          <stringProp name="HTTPSampler.domain">localhost</stringProp>
           <stringProp name="HTTPSampler.port">8080</stringProp>
           <stringProp name="HTTPSampler.protocol"></stringProp>
           <stringProp name="HTTPSampler.contentEncoding"></stringProp>
@@ -58,7 +58,7 @@
               <time>true</time>
               <latency>true</latency>
               <timestamp>true</timestamp>
-              <success>true</success>
+              <success>false</success>
               <label>false</label>
               <code>false</code>
               <message>false</message>
@@ -66,7 +66,7 @@
               <dataType>false</dataType>
               <encoding>false</encoding>
               <assertions>false</assertions>
-              <subresults>true</subresults>
+              <subresults>false</subresults>
               <responseData>false</responseData>
               <samplerData>false</samplerData>
               <xml>false</xml>

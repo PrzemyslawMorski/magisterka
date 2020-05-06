@@ -1,0 +1,1 @@
+singularity run --writable compute_test_sandbox &

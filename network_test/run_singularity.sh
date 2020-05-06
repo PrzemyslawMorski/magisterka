@@ -1,0 +1,1 @@
+sudo singularity run --writable network_test_sandbox &
