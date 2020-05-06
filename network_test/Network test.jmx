@@ -15,7 +15,7 @@
         <elementProp name="ThreadGroup.main_controller" elementType="com.blazemeter.jmeter.control.VirtualUserController"/>
         <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
         <stringProp name="TargetLevel">3000</stringProp>
-        <stringProp name="RampUp">0.05</stringProp>
+        <stringProp name="RampUp">6</stringProp>
         <stringProp name="Steps">120</stringProp>
         <stringProp name="Hold">0</stringProp>
         <stringProp name="LogFilename"></stringProp>
