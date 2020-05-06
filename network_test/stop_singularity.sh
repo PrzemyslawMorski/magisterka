@@ -1,0 +1,1 @@
+singularity instance stop network_test
