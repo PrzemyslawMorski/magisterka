@@ -1,3 +1,1 @@
-singularity build --sandbox --fix-perms network_test_sandbox/ docker://nginx
-
-sudo singularity instance start --writable network_test_sandbox &
+singularity instance start --fakeroot --writable --net --network-args "portmap=8080:80/tcp" network_test_sandbox network_test

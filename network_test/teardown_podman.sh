@@ -1,0 +1,1 @@
+podman rm network_test

@@ -1,1 +1,1 @@
-docker kill network_test
+docker stop network_test
