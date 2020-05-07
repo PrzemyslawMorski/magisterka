@@ -1,0 +1,1 @@
+rm -r compute_test_sandbox

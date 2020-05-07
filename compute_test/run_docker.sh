@@ -1,1 +1,1 @@
-docker run -p 80:8080 --rm --name compute_test pmorski/compute_test_fibonacci
+docker start compute_test
