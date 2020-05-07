@@ -1,16 +1,18 @@
 import subprocess
 import time
 import paramiko
+import shutil
+import os
 
 jmeter_path = "C:\Program Files\\apache-jmeter-5.2.1\\bin\jmeter.bat"
 test_file = r"C:\GIT\magisterka\network_test\Network test.jmx"
-results_path = "C:\\GIT\\magisterka\\network_test\\"
+results_path = "C:\\GIT\\magisterka\\network_test\\podman\\"
 num_tests = 10
 
 setup_script = ''
 teardown_script = ''
-run_script = r'C:\GIT\magisterka\network_test\run_docker.sh'
-stop_script = r'C:\GIT\magisterka\network_test\stop_docker.sh'
+run_script = r'C:\GIT\magisterka\network_test\run_podman.sh'
+stop_script = r'C:\GIT\magisterka\network_test\stop_podman.sh'
 
 test_machine_addr = "192.168.0.168"
 usr = "pmorski"
@@ -60,25 +62,31 @@ for i in range(num_tests):
     results_file = "results_"+str(i+1)+".csv"
     usage_file = "usage_"+str(i+1)+".csv"
 
-    ssh_exec(
-        "glances --export csv --export-csv-file " + usage_file + " --time 0.1 -q &")
+    print("Starting iteration: "+str(i+1))
 
-    time.sleep(10)
+    ssh_exec(
+        "glances --export csv --export-csv-file " + usage_file + " --time 0.4 -q &")
+
+    print("Started glances")
 
     ssh_exec('bash run.sh')
 
-    time.sleep(30)
+    print("Started container")
 
     subprocess.run([jmeter_path,  "-n", "-t", test_file, "-l", results_path+results_file])
+    print("Finished jmeter")
 
-    time.sleep(30)
 
     ssh_exec('bash stop.sh')
+    print("Stopped container")
 
-    time.sleep(10)
 
     ssh_exec('pkill glances')
+    print("Killed glances")
 
+    # time.sleep("60")
+
+    # shutil.move(".\\summary.csv", results_path+results_file)
     sftp_get(usage_file, results_path+usage_file)
     ssh_exec('rm ' + usage_file)
 

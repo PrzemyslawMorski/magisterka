@@ -1,0 +1,1 @@
+podman kill network_test

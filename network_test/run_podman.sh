@@ -1,1 +1,1 @@
-podman run -p 80:80 --name network_test --rm nginx
+podman run -d -p 80:80 --name network_test --rm nginx
