@@ -114,10 +114,10 @@ def run_test(test_file, results_path,  run_script, stop_script, setup_script=Non
 #          run_script=r'C:\GIT\magisterka\network_test\run_podman.sh',
 #          stop_script=r'C:\GIT\magisterka\network_test\stop_podman.sh')
 
-# run_test(test_file=r"C:\GIT\magisterka\network_test\Network test.jmx",
-#          results_path="C:\\GIT\\magisterka\\network_test\\singularity\\",
-#          run_script=r'C:\GIT\magisterka\network_test\run_singularity.sh',
-#          stop_script=r'C:\GIT\magisterka\network_test\stop_singularity.sh')
+run_test(test_file=r"C:\GIT\magisterka\network_test\Network test.jmx",
+         results_path="C:\\GIT\\magisterka\\network_test\\singularity\\",
+         run_script=r'C:\GIT\magisterka\network_test\run_singularity.sh',
+         stop_script=r'C:\GIT\magisterka\network_test\stop_singularity.sh')
 
 # compute
 run_test(test_file=r"C:\GIT\magisterka\compute_test\Compute test.jmx",
@@ -125,15 +125,15 @@ run_test(test_file=r"C:\GIT\magisterka\compute_test\Compute test.jmx",
          run_script=r'C:\GIT\magisterka\compute_test\run_podman.sh',
          stop_script=r'C:\GIT\magisterka\compute_test\stop_podman.sh')
 
-# run_test(test_file=r"C:\GIT\magisterka\compute_test\Compute test.jmx",
-#          results_path="C:\\GIT\\magisterka\\compute_test\\docker\\",
-#          run_script=r'C:\GIT\magisterka\compute_test\run_docker.sh',
-#          stop_script=r'C:\GIT\magisterka\compute_test\stop_docker.sh')
+run_test(test_file=r"C:\GIT\magisterka\compute_test\Compute test.jmx",
+         results_path="C:\\GIT\\magisterka\\compute_test\\docker\\",
+         run_script=r'C:\GIT\magisterka\compute_test\run_docker.sh',
+         stop_script=r'C:\GIT\magisterka\compute_test\stop_docker.sh')
 
-# run_test(test_file=r"C:\GIT\magisterka\compute_test\Compute test.jmx",
-#          results_path="C:\\GIT\\magisterka\\compute_test\\singularity\\",
-#          run_script=r'C:\GIT\magisterka\compute_test\run_singularity.sh',
-#          stop_script=r'C:\GIT\magisterka\compute_test\stop_singularity.sh')
+run_test(test_file=r"C:\GIT\magisterka\compute_test\Compute test.jmx",
+         results_path="C:\\GIT\\magisterka\\compute_test\\singularity\\",
+         run_script=r'C:\GIT\magisterka\compute_test\run_singularity.sh',
+         stop_script=r'C:\GIT\magisterka\compute_test\stop_singularity.sh')
 
 # io query
 run_test(test_file=r"C:\GIT\magisterka\io_test\Search test.jmx",
@@ -142,11 +142,11 @@ run_test(test_file=r"C:\GIT\magisterka\io_test\Search test.jmx",
          stop_script=r'C:\GIT\magisterka\io_test\stop_podman.sh',
          seed_script=r'C:\GIT\magisterka\io_test\seed.sh')
 
-# run_test(test_file=r"C:\GIT\magisterka\io_test\Search test.jmx",
-#          results_path="C:\\GIT\\magisterka\\io_test\\query\\docker\\",
-#          run_script=r'C:\GIT\magisterka\io_test\run_docker.sh',
-#          stop_script=r'C:\GIT\magisterka\io_test\stop_docker.sh',
-#          seed_script=r'C:\GIT\magisterka\io_test\seed.sh')
+run_test(test_file=r"C:\GIT\magisterka\io_test\Search test.jmx",
+         results_path="C:\\GIT\\magisterka\\io_test\\query\\docker\\",
+         run_script=r'C:\GIT\magisterka\io_test\run_docker.sh',
+         stop_script=r'C:\GIT\magisterka\io_test\stop_docker.sh',
+         seed_script=r'C:\GIT\magisterka\io_test\seed.sh')
 
 # run_test(test_file=r"C:\GIT\magisterka\io_test\Search test.jmx",
 #          results_path="C:\\GIT\\magisterka\\io_test\\query\\singularity\\",
@@ -155,17 +155,17 @@ run_test(test_file=r"C:\GIT\magisterka\io_test\Search test.jmx",
 #          seed_script=r'C:\GIT\magisterka\io_test\seed.sh')
 
 # io index
-# run_test(test_file=r"C:\GIT\magisterka\io_test\Index test.jmx",
-#          results_path="C:\\GIT\\magisterka\\io_test\\index\\podman\\",
-#          run_script=r'C:\GIT\magisterka\io_test\run_podman.sh',
-#          stop_script=r'C:\GIT\magisterka\io_test\stop_podman.sh',
-#          seed_script=r'C:\GIT\magisterka\io_test\seed.sh')
+run_test(test_file=r"C:\GIT\magisterka\io_test\Index test.jmx",
+         results_path="C:\\GIT\\magisterka\\io_test\\index\\podman\\",
+         run_script=r'C:\GIT\magisterka\io_test\run_podman.sh',
+         stop_script=r'C:\GIT\magisterka\io_test\stop_podman.sh',
+         seed_script=r'C:\GIT\magisterka\io_test\seed.sh')
 
-# run_test(test_file=r"C:\GIT\magisterka\io_test\Index test.jmx",
-#          results_path="C:\\GIT\\magisterka\\io_test\\index\\docker\\",
-#          run_script=r'C:\GIT\magisterka\io_test\run_docker.sh',
-#          stop_script=r'C:\GIT\magisterka\io_test\stop_docker.sh',
-#          seed_script=r'C:\GIT\magisterka\io_test\seed.sh')
+run_test(test_file=r"C:\GIT\magisterka\io_test\Index test.jmx",
+         results_path="C:\\GIT\\magisterka\\io_test\\index\\docker\\",
+         run_script=r'C:\GIT\magisterka\io_test\run_docker.sh',
+         stop_script=r'C:\GIT\magisterka\io_test\stop_docker.sh',
+         seed_script=r'C:\GIT\magisterka\io_test\seed.sh')
 
 # run_test(test_file=r"C:\GIT\magisterka\io_test\Index test.jmx",
 #          results_path="C:\\GIT\\magisterka\\io_test\\index\\singularity\\",
