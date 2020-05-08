@@ -1,1 +1,1 @@
-singularity run --fakeroot --writable compute_test_sandbox &
+singularity run --writable compute_test_sandbox &

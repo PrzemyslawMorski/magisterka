@@ -1,4 +1,4 @@
-FROM golang:latest
+FROM golang:alpine
 LABEL Przemysław Morski <morski.przemek@gmail.com>
 RUN mkdir /app
 ADD . /app/
