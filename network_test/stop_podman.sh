@@ -1,1 +1,1 @@
-podman stop network_test
+podman kill network_test

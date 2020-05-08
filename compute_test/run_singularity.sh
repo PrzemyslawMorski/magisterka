@@ -1,1 +1,2 @@
-singularity run --writable --network-args "portmap=8080:8080/tcp" compute_test_sandbox &
+sudo singularity instance start --writable-tmpfs docker://pmorski/compute_test_fibonacci compute_test
+sudo singularity exec instance://compute_test /app/main &

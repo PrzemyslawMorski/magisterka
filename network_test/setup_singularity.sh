@@ -1,1 +1,0 @@
-singularity build --sandbox --fix-perms network_test_sandbox/ docker://nginx

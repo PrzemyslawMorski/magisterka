@@ -1,1 +1,1 @@
-kill $(pgrep -f nginx)
+sudo singularity instance stop network_test

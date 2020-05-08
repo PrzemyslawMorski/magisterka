@@ -1,1 +1,1 @@
-podman start network_test
+podman run -p 8080:80 --rm -d --name network_test nginx

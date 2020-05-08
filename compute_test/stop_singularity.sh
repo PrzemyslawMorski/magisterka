@@ -1,1 +1,1 @@
-kill $(pgrep -f /app/main)
+sudo singularity instance stop compute_test 

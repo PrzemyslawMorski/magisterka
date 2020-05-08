@@ -1,1 +1,0 @@
-rm -r network_test_sandbox

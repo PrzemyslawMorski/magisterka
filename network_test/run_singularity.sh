@@ -1,1 +1,2 @@
-singularity run --fakeroot --writable --net --network-args "portmap=8080:80/tcp" network_test_sandbox &
+sudo singularity instance start --writable-tmpfs docker://nginx network_test
+sudo singularity exec instance://network_test nginx

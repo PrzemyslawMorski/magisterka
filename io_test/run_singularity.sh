@@ -2,7 +2,9 @@
 
 export ES_JAVA_OPTS="-Xms6g -Xmx6g"
 
-bash -c "singularity build --fix-perms --sandbox io_test_sandbox/ docker://docker.elastic.co/elasticsearch/elasticsearch:7.4.2"
-bash -c "cp ./magisterka/io_test/elasticsearch.yml ./io_test_sandbox/usr/share/elasticsearch/config"
+sudo singularity instance start \
+    --bind ./magisterka/io_test/elasticsearch.yml:/usr/share/elasticsearch/config/elasticsearch.yml \
+    --writable-tmpfs docker://docker.elastic.co/elasticsearch/elasticsearch:7.6.2 \
+    io_test
 
-bash -c "ingularity run --fakeroot --writable io_test_sandbox &"
+sudo singularity exec instance://io_test elasticsearch &
