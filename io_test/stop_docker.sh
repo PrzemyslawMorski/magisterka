@@ -1,0 +1,1 @@
+docker kill io_test

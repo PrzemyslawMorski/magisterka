@@ -1,1 +1,1 @@
-pkill main
+kill $(pgrep -f main)
