@@ -1,1 +1,1 @@
-singularity instance start --fakeroot --writable --net --network-args "portmap=8080:80/tcp" network_test_sandbox network_test
+singularity run --fakeroot --writable --net --network-args "portmap=8080:80/tcp" network_test_sandbox &

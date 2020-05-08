@@ -1,1 +1,1 @@
-singularity instance stop network_test
+kill $(pgrep -f nginx)
