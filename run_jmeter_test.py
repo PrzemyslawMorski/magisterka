@@ -72,7 +72,7 @@ def run_test(test_file, results_path,  run_script, stop_script, setup_script=Non
 
         print("Started container")
 
-        if seed_script != '':
+        if seed_script != None:
             print("Started seeding the container")
             ssh_exec('bash seed.sh')
             time.sleep(5)
@@ -93,7 +93,7 @@ def run_test(test_file, results_path,  run_script, stop_script, setup_script=Non
         sftp_get(usage_file, results_path+usage_file)
         ssh_exec('rm ' + usage_file)
 
-    if teardown_script != '':
+    if teardown_script != None:
         ssh_exec('bash teardown.sh')
 
 
@@ -112,25 +112,21 @@ def run_test(test_file, results_path,  run_script, stop_script, setup_script=Non
 #          run_script=r'C:\GIT\magisterka\network_test\run_podman.sh',
 #          stop_script=r'C:\GIT\magisterka\network_test\stop_podman.sh')
 
-# run_test(test_file=r"C:\GIT\magisterka\network_test\Network test.jmx",
-#          results_path="C:\\GIT\\magisterka\\network_test\\singularity\\",
-#          setup_script=r'C:\GIT\magisterka\network_test\setup_singularity.sh',
-#          teardown_script=r'C:\GIT\magisterka\network_test\teardown_singularity.sh',
-#          run_script=r'C:\GIT\magisterka\network_test\run_singularity.sh',
-#          stop_script=r'C:\GIT\magisterka\network_test\stop_singularity.sh')
+run_test(test_file=r"C:\GIT\magisterka\network_test\Network test.jmx",
+         results_path="C:\\GIT\\magisterka\\network_test\\singularity\\",
+         setup_script=r'C:\GIT\magisterka\network_test\setup_singularity.sh',
+         teardown_script=r'C:\GIT\magisterka\network_test\teardown_singularity.sh',
+         run_script=r'C:\GIT\magisterka\network_test\run_singularity.sh',
+         stop_script=r'C:\GIT\magisterka\network_test\stop_singularity.sh')
 
 # compute
 # run_test(test_file=r"C:\GIT\magisterka\compute_test\Compute test.jmx",
 #          results_path="C:\\GIT\\magisterka\\compute_test\\podman\\",
-#          setup_script=r'C:\GIT\magisterka\compute_test\setup_podman.sh',
-#          teardown_script=r'C:\GIT\magisterka\compute_test\teardown_podman.sh',
 #          run_script=r'C:\GIT\magisterka\compute_test\run_podman.sh',
 #          stop_script=r'C:\GIT\magisterka\compute_test\stop_podman.sh')
 
 # run_test(test_file=r"C:\GIT\magisterka\compute_test\Compute test.jmx",
 #          results_path="C:\\GIT\\magisterka\\compute_test\\docker\\",
-#          setup_script=r'C:\GIT\magisterka\compute_test\setup_docker.sh',
-#          teardown_script=r'C:\GIT\magisterka\compute_test\teardown_docker.sh',
 #          run_script=r'C:\GIT\magisterka\compute_test\run_docker.sh',
 #          stop_script=r'C:\GIT\magisterka\compute_test\stop_docker.sh')
 
@@ -154,11 +150,11 @@ def run_test(test_file, results_path,  run_script, stop_script, setup_script=Non
 #          stop_script=r'C:\GIT\magisterka\io_test\stop_docker.sh',
 #          seed_script=r'C:\GIT\magisterka\io_test\seed.sh')
 
-run_test(test_file=r"C:\GIT\magisterka\io_test\Search test.jmx",
-         results_path="C:\\GIT\\magisterka\\io_test\\query\\singularity\\",
-         run_script=r'C:\GIT\magisterka\io_test\run_singularity.sh',
-         stop_script=r'C:\GIT\magisterka\io_test\stop_singularity.sh',
-         seed_script=r'C:\GIT\magisterka\io_test\seed.sh')
+# run_test(test_file=r"C:\GIT\magisterka\io_test\Search test.jmx",
+#          results_path="C:\\GIT\\magisterka\\io_test\\query\\singularity\\",
+#          run_script=r'C:\GIT\magisterka\io_test\run_singularity.sh',
+#          stop_script=r'C:\GIT\magisterka\io_test\stop_singularity.sh',
+#          seed_script=r'C:\GIT\magisterka\io_test\seed.sh')
 
 # io index
 # run_test(test_file=r"C:\GIT\magisterka\io_test\Index test.jmx",
@@ -173,8 +169,8 @@ run_test(test_file=r"C:\GIT\magisterka\io_test\Search test.jmx",
 #          stop_script=r'C:\GIT\magisterka\io_test\stop_docker.sh',
 #          seed_script=r'C:\GIT\magisterka\io_test\seed.sh')
 
-run_test(test_file=r"C:\GIT\magisterka\io_test\Index test.jmx",
-         results_path="C:\\GIT\\magisterka\\io_test\\index\\singularity\\",
-         run_script=r'C:\GIT\magisterka\io_test\run_singularity.sh',
-         stop_script=r'C:\GIT\magisterka\io_test\stop_singularity.sh',
-         seed_script=r'C:\GIT\magisterka\io_test\seed.sh')
+# run_test(test_file=r"C:\GIT\magisterka\io_test\Index test.jmx",
+#          results_path="C:\\GIT\\magisterka\\io_test\\index\\singularity\\",
+#          run_script=r'C:\GIT\magisterka\io_test\run_singularity.sh',
+#          stop_script=r'C:\GIT\magisterka\io_test\stop_singularity.sh',
+#          seed_script=r'C:\GIT\magisterka\io_test\seed.sh')
