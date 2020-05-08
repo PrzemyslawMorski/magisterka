@@ -1,1 +1,1 @@
-docker stop compute_test
+docker kill compute_test

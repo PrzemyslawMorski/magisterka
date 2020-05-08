@@ -1,1 +1,1 @@
-podman stop compute_test
+podman kill compute_test

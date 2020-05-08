@@ -1,1 +1,1 @@
-kill $(pgrep -f main)
+kill $(pgrep -f /app/main)
