@@ -1,2 +1,0 @@
-py run_docker_podman_test.py
-py run_singularity_test.py
