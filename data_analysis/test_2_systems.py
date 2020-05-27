@@ -6,13 +6,21 @@ import glob
 import sys
 import os
 
-column = 'elapsed'
-test_type = 'network'
-results_folder = 'results_steps'
-step_file_suffix = '_step.csv'
+column =  sys.argv[1]
+test_type = sys.argv[2]
+results_folder = sys.argv[3]
+step_file_suffix = sys.argv[4]
 
-system_1 = 'docker'
-system_2 = 'podman'
+system_1 = sys.argv[5]
+system_2 = sys.argv[6]
+
+# column = 'elapsed'
+# test_type = 'network'
+# results_folder = 'results_steps'
+# step_file_suffix = '_step.csv'
+
+# system_1 = 'docker'
+# system_2 = 'podman'
 
 base_path = r'D:\Google Drive\Magister\Wyniki badan\no-keep-alive\%s' % (test_type) 
 path_to_format = base_path + r'\%s\%s\%s%s'
