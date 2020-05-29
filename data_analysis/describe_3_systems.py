@@ -47,10 +47,10 @@ for i in range(1, 11):
         'Krok wzostu liczby uzytkownikow': i,
         'Metryka': column,
         'Mediana docker': docker_mean,
-        'Rozstep miedzykwantylowy docker': docker_diff_percentile,
         'Mediana podman': podman_mean,
-        'Rozstep miedzykwantylowy podman': podman_diff_percentile,
         'Mediana singularity': singularity_mean,
+        'Rozstep miedzykwantylowy docker': docker_diff_percentile,
+        'Rozstep miedzykwantylowy podman': podman_diff_percentile,
         'Rozstep miedzykwantylowy singularity': singularity_diff_percentile,
     })
 
